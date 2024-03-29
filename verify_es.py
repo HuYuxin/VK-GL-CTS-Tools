@@ -201,7 +201,11 @@ def verifyTestLogs(report, package, gitSHA, ctsPath):
 
 	mustpassCases = {}
 
-	# Get the mustpass file parent path based on if the branch has switched to use the new openglcts/data/gl_cts/data structure
+	# es mustpass files are stored under one of the below two directories, based on if the branch as applied a folder structure change
+	# external/openglcts/data/mustpass
+	# external/openglcts/data/gl_cts/data/mustpass
+	# Get the mustpass file search path based on which folder structure the branch has
+
 	mustpassFileSearchPath = "openglcts"
 	# First find all immediate sub directories of external/openglcts/data
 	openglctsDataPath = os.path.join(ctsPath, "external", "openglcts", "data")
